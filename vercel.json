@@ -1,3 +1,5 @@
 {
+  "buildCommand": "ng build --configuration production",
+  "outputDirectory": "dist/media-ala-carte/browser",
   "routes": [{ "src": "/(.*)", "dest": "/index.html" }]
 }
