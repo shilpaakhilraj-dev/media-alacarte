@@ -1,0 +1,8 @@
+:root {
+  --primary-dark: #ec2f5c; /* Vibrant Pink/Red */
+  --primary: #e34941;      /* Coral Red */
+}
+
+.bg-primary-gradient {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+}

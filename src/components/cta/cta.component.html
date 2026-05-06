@@ -1,0 +1,119 @@
+<section id="demo" class="relative section-padding overflow-hidden">
+  <div class="absolute inset-0 bg-dark-200"></div>
+  <div
+    class="absolute inset-0 bg-gradient-radial from-primary/10 via-transparent to-transparent"
+  ></div>
+  <div
+    class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl orb-1 pointer-events-none"
+  ></div>
+  <div
+    class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl orb-2 pointer-events-none"
+  ></div>
+  <div class="absolute inset-0 grid-bg opacity-50 pointer-events-none"></div>
+  <div
+    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"
+  ></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center">
+    <div class="inline-flex items-center gap-2 mb-6 aos-hidden" #eyebrowRef>
+      <div class="w-8 h-px bg-primary"></div>
+      <span class="font-mono text-xs text-primary uppercase tracking-widest"
+        >Supercharge Your Strategy</span
+      >
+      <div class="w-8 h-px bg-primary"></div>
+    </div>
+
+    <h2
+      class="font-display text-6xl md:text-8xl lg:text-9xl tracking-wider mb-6 leading-none aos-hidden"
+      #headlineRef
+    >
+      <span class="text-white">YOUR MEDIA</span><br />
+      <span class="text-gradient-red">100% EFFICIENT</span>
+    </h2>
+
+    <p
+      class="font-body text-white/50 text-xl mb-10 max-w-2xl mx-auto aos-hidden"
+      #subRef
+    >
+      Plan, Book, and Manage Campaigns — Maximize Reach and ROI with our
+      all-in-one media buying platform.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4 mb-12 aos-hidden" #checkRef>
+      @for (item of checkItems; track item) {
+        <div
+          class="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10"
+        >
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#E8173C"
+            stroke-width="2.5"
+          >
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+          <span class="font-body text-sm text-white/70">{{ item }}</span>
+        </div>
+      }
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-4 mb-16 aos-hidden" #btnRef>
+      <button
+        class="btn-primary px-10 py-5 rounded-xl text-base font-heading tracking-wide glow-red"
+      >
+        <span>Optimize Your Media Today →</span>
+      </button>
+      <button
+        class="btn-outline px-10 py-5 rounded-xl text-base font-heading tracking-wide"
+      >
+        <span>Schedule a Call</span>
+      </button>
+    </div>
+
+    <div
+      class="max-w-lg mx-auto card-glass rounded-2xl p-8 border-gradient aos-hidden"
+      #formRef
+    >
+      <h3 class="font-heading text-lg font-bold text-white mb-2">
+        Request a Free Demo
+      </h3>
+      <p class="font-body text-sm text-white/40 mb-6">
+        See the platform in action — no commitment needed.
+      </p>
+      <div class="flex flex-col gap-4">
+        <div class="flex gap-4">
+          <input
+            type="text"
+            placeholder="First Name"
+            class="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/30 focus:outline-none focus:border-primary/50 transition-colors font-body"
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            class="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/30 focus:outline-none focus:border-primary/50 transition-colors font-body"
+          />
+        </div>
+        <input
+          type="email"
+          placeholder="Work Email"
+          class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/30 focus:outline-none focus:border-primary/50 transition-colors font-body"
+        />
+        <select
+          class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white/60 focus:outline-none focus:border-primary/50 transition-colors font-body appearance-none"
+        >
+          <option value="" disabled selected>I am a...</option>
+          <option>Advertiser</option>
+          <option>Agency</option>
+          <option>Media Owner</option>
+        </select>
+        <button
+          class="btn-primary py-3.5 rounded-lg font-heading tracking-wide"
+        >
+          <span>Get Started Free →</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

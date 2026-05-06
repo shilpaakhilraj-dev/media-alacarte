@@ -1,0 +1,99 @@
+<nav
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+  [class.scrolled]="isScrolled()"
+  [class.nav-transparent]="!isScrolled()"
+>
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="relative flex items-center h-18 py-4">
+      <!-- Logo -->
+      <div class="flex items-center gap-3 group cursor-pointer z-10">
+        <!-- Logo -->
+        <div class="relative w-8 h-8">
+          <div
+            class="absolute inset-0 bg-primary rounded-sm rotate-45 group-hover:rotate-[55deg] transition-transform duration-500"
+          ></div>
+          <div
+            class="absolute inset-1 bg-dark rounded-sm rotate-45 flex items-center justify-center"
+          >
+            <div
+              class="w-1.5 h-1.5 bg-primary rounded-full -rotate-45 group-hover:scale-150 transition-transform duration-500"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="flex flex-col leading-tight">
+          <span class="font-heading text-primary font-bold text-sm">
+            media
+          </span>
+          <span class="font-heading text-primary font-bold text-sm">
+            alacarte
+          </span>
+        </div>
+      </div>
+
+      <!-- Desktop Nav -->
+      <div
+        class="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2"
+      >
+        @for (link of navLinks; track link.label) {
+          <a
+            [href]="link.href"
+            class="nav-link font-body text-xs font-medium tracking-wide text-white/60 hover:text-white transition-colors duration-200 relative py-1"
+            [class.active]="activeSection() === link.id"
+            (click)="setActive(link.id)"
+          >
+            {{ link.label }}
+            <span class="nav-indicator"></span>
+          </a>
+        }
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="hidden md:flex items-center gap-3 ml-auto z-10">
+        <button class="btn-primary text-sm px-6 py-2 rounded-lg">
+          <span>Login</span>
+        </button>
+        <!-- <button class="btn-primary text-sm px-6 py-2 rounded-lg"><span>Request Demo</span></button> -->
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button
+        class="md:hidden p-2 rounded-lg border border-white/10 hover:border-primary/50 transition-colors"
+        (click)="toggleMenu()"
+      >
+        <div class="w-5 flex flex-col gap-1.5">
+          <span class="hamburger-bar" [class.open-1]="menuOpen()"></span>
+          <span class="hamburger-bar" [class.open-2]="menuOpen()"></span>
+          <span class="hamburger-bar" [class.open-3]="menuOpen()"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    class="md:hidden mobile-menu overflow-hidden transition-all duration-500"
+    [class.mobile-menu-open]="menuOpen()"
+  >
+    <div class="px-6 pb-6 pt-2 flex flex-col gap-4 border-t border-white/5">
+      @for (link of navLinks; track link.label) {
+        <a
+          [href]="link.href"
+          class="font-body text-sm font-medium text-white/70 hover:text-white transition-colors py-1"
+          (click)="menuOpen.set(false)"
+        >
+          {{ link.label }}
+        </a>
+      }
+      <div class="flex gap-3 mt-2">
+        <button class="btn-outline text-sm px-5 py-2 rounded-lg flex-1">
+          <span>Login</span>
+        </button>
+        <button class="btn-primary text-sm px-5 py-2 rounded-lg flex-1">
+          <span>Demo</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

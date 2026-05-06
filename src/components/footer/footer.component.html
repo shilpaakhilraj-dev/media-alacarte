@@ -1,0 +1,171 @@
+<footer id="contact" class="bg-dark-100 border-t border-white/5 pt-20 pb-8">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <!-- Brand -->
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="relative w-8 h-8">
+            <div class="absolute inset-0 bg-primary rounded-sm rotate-45"></div>
+            <div
+              class="absolute inset-1 bg-dark-100 rounded-sm rotate-45 flex items-center justify-center"
+            >
+              <div class="w-1.5 h-1.5 bg-primary rounded-full -rotate-45"></div>
+            </div>
+          </div>
+          <!-- <span class="font-heading text-white font-bold text-lg">
+                media<span class="text-primary">alacarte</span>
+            </span> -->
+          <div class="flex flex-col leading-tight">
+            <span class="font-heading text-primary font-bold text-sm">
+              media
+            </span>
+            <span class="font-heading text-primary font-bold text-sm">
+              alacarte
+            </span>
+          </div>
+        </div>
+        <p class="font-body text-white/40 text-sm leading-relaxed mb-6">
+          The #1 Media Marketplace for Advertisers & Agencies. Simplify media
+          buying with smarter strategies and measurable impact.
+        </p>
+        <div class="flex gap-3">
+          @for (social of socials; track social.label) {
+            <a
+              [href]="social.href"
+              [attr.aria-label]="social.label"
+              class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-primary/50 hover:bg-primary/10 transition-all duration-300"
+            >
+              <span [innerHTML]="social.icon"></span>
+            </a>
+          }
+        </div>
+      </div>
+
+      <!-- Link columns -->
+      @for (col of linkColumns; track col.heading) {
+        <div>
+          <h4
+            class="font-heading text-sm font-bold text-white uppercase tracking-widest mb-5"
+          >
+            {{ col.heading }}
+          </h4>
+          <ul class="flex flex-col gap-3">
+            @for (link of col.links; track link.label) {
+              <li>
+                <a
+                  [href]="link.href"
+                  class="font-body text-sm text-white/40 hover:text-primary transition-colors duration-200"
+                >
+                  {{ link.label }}
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+
+      <!-- Contact -->
+      <div>
+        <h4
+          class="font-heading text-sm font-bold text-white uppercase tracking-widest mb-5"
+        >
+          Contact Us
+        </h4>
+        <div class="flex flex-col gap-4">
+          <div class="flex items-start gap-3">
+            <svg
+              class="shrink-0 mt-0.5"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#E8173C"
+              stroke-width="2"
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <p class="font-body text-sm text-white/40 leading-relaxed">
+              Makateb 2 Building Floor 4, Office 406<br />
+              Dubai Production City, Dubai<br />
+              United Arab Emirates
+            </p>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#E8173C"
+              stroke-width="2"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            <a
+              href="mailto:admin@mediaalacarte.net"
+              class="font-mono text-sm text-white/40 hover:text-primary transition-colors"
+            >
+              admin&#64;mediaalacarte.net
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="border-t border-white/5 pt-10 mb-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h4 class="font-heading text-white font-bold mb-1">
+            Stay in the loop
+          </h4>
+          <p class="font-body text-sm text-white/40">
+            Get the latest media buying insights and platform updates.
+          </p>
+        </div>
+        <div class="flex gap-3 w-full md:w-auto">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="flex-1 md:w-72 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/30 focus:outline-none focus:border-primary/50 transition-colors font-body"
+          />
+          <button
+            class="btn-primary px-6 py-3 rounded-lg text-sm font-heading shrink-0"
+          >
+            <span>Subscribe</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div
+      class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4"
+    >
+      <p class="font-body text-xs text-white/25 text-center md:text-left">
+        © 2024 Media Alacarte Agency FZ LLC — All Rights Reserved.
+      </p>
+      <div class="flex gap-6">
+        <a
+          href="#"
+          class="font-body text-xs text-white/25 hover:text-white/60 transition-colors"
+          >Privacy Policy</a
+        >
+        <a
+          href="#"
+          class="font-body text-xs text-white/25 hover:text-white/60 transition-colors"
+          >Terms of Service</a
+        >
+        <a
+          href="#"
+          class="font-body text-xs text-white/25 hover:text-white/60 transition-colors"
+          >Cookie Policy</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>

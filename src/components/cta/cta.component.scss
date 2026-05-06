@@ -1,0 +1,15 @@
+.orb-1 {
+  animation: float 10s ease-in-out infinite;
+}
+.orb-2 {
+  animation: float 14s ease-in-out infinite reverse;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(20px, -20px) scale(1.05);
+  }
+}

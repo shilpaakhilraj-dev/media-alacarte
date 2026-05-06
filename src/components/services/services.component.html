@@ -1,0 +1,121 @@
+<section
+  id="features"
+  class="services-section relative overflow-hidden"
+  #sectionRef
+>
+  <!-- Decorative lines -->
+  <div class="line-top"></div>
+  <div class="line-bottom"></div>
+  <!-- Glow orb -->
+  <div class="glow-orb"></div>
+
+  <div class="services-container">
+
+    <!-- Header -->
+    <div class="section-header aos-hidden" #headerRef>
+      <div class="section-label">
+        <span class="label-line"></span>
+        <span class="label-text">Why Media Ala Carte?</span>
+        <span class="label-line"></span>
+      </div>
+      <h2 class="section-heading">
+        Our All <span class="heading-highlight">Solution</span> for<br />
+        Smarter Media Buying
+      </h2>
+      <p class="section-sub">
+        Everything you need to plan, execute, and optimize your media strategy —
+        in one unified platform.
+      </p>
+    </div>
+
+    <!-- Bento Grid -->
+    <div class="bento-grid" #cardsRef>
+
+      <!-- Hero Card (spans 2 cols) -->
+      <div class="service-card card-hero aos-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80&fit=crop"
+          alt="Media buying workspace"
+          class="hero-img"
+        />
+        <div class="hero-image-overlay"></div>
+        <div class="hero-body flex justify-between">
+          <p class="hero-text">
+            We simplify media buying with data, automation, and collaboration to maximize ROI
+          </p>
+          <button class="btn-get-started">Get Started</button>
+        </div>
+      </div>
+
+      <!-- Campaign Planning -->
+      <div
+        class="service-card card-regular aos-hidden"
+        [style.animation-delay]="'120ms'"
+      >
+        <div class="card-icon-wrap" [innerHTML]="services[0].icon"></div>
+        <h3 class="card-title">{{ services[0].title }}</h3>
+        <p class="card-desc">{{ services[0].description }}</p>
+        <div class="card-arrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Media Buying -->
+      <div
+        class="service-card card-regular aos-hidden"
+        [style.animation-delay]="'240ms'"
+      >
+        <div class="card-icon-wrap" [innerHTML]="services[1].icon"></div>
+        <h3 class="card-title">{{ services[1].title }}</h3>
+        <p class="card-desc">{{ services[1].description }}</p>
+        <div class="card-arrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Ad Distribution — highlighted red card -->
+      <div
+        class="service-card card-highlighted aos-hidden"
+        [style.animation-delay]="'360ms'"
+      >
+        <div class="card-icon-wrap icon-dark" [innerHTML]="services[2].icon"></div>
+        <h3 class="card-title">{{ services[2].title }}</h3>
+        <p class="card-desc">{{ services[2].description }}</p>
+        <div class="card-arrow arrow-dark">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Performance Analytics -->
+      <div
+        class="service-card card-regular aos-hidden"
+        [style.animation-delay]="'480ms'"
+      >
+        <div class="card-icon-wrap" [innerHTML]="services[3].icon"></div>
+        <h3 class="card-title">{{ services[3].title }}</h3>
+        <p class="card-desc">{{ services[3].description }}</p>
+        <div class="card-arrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+    <!-- /bento-grid -->
+
+    <!-- CTA -->
+    <div class="section-cta aos-hidden" #ctaRef>
+      <button class="btn-explore">
+        <span>Explore All Features →</span>
+      </button>
+    </div>
+
+  </div>
+</section>

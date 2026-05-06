@@ -1,0 +1,94 @@
+<section id="benefits" class="section-padding bg-dark relative overflow-hidden">
+  <div
+    class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"
+  ></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-20 aos-hidden" #labelRef>
+      <div class="inline-flex items-center gap-2 mb-4">
+        <div class="w-6 h-px bg-primary"></div>
+        <span class="font-mono text-xs text-primary uppercase tracking-widest"
+          >Powering Collaboration</span
+        >
+        <div class="w-6 h-px bg-primary"></div>
+      </div>
+      <h2 class="font-display text-5xl md:text-7xl tracking-wider">
+        <span class="text-white">COLLABORATE.</span><br />
+        <span class="text-gradient-red">ELEVATE.</span>
+        <span class="text-white/30"> SUCCEED.</span>
+      </h2>
+      <p class="font-body text-white/50 text-lg mt-5 max-w-xl mx-auto">
+        Empower advertisers, agencies, and media owners to work seamlessly on a
+        single platform.
+      </p>
+    </div>
+
+    <!-- Stats grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24" #statsRef>
+      @for (stat of stats; track stat.label) {
+        <div
+          class="stat-card card-glass rounded-2xl p-8 text-center group aos-hidden relative overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+            [style.background]="
+              'radial-gradient(ellipse at center,' +
+              stat.glowColor +
+              ',transparent 70%)'
+            "
+          ></div>
+          <div class="relative">
+            <div
+              class="font-display text-6xl md:text-7xl tracking-wider mb-2"
+              [class.text-gradient-red]="stat.primary"
+              [class.text-white]="!stat.primary"
+            >
+              {{ stat.value }}
+            </div>
+            <div
+              class="font-body text-white/50 text-sm uppercase tracking-widest mb-3"
+            >
+              {{ stat.label }}
+            </div>
+            <div
+              class="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-3"
+            ></div>
+            <div class="font-body text-white/30 text-xs">{{ stat.sub }}</div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Marquee -->
+    <div class="overflow-hidden relative aos-hidden" #marqueeRef>
+      <div
+        class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-dark to-transparent z-10 pointer-events-none"
+      ></div>
+      <div
+        class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-dark to-transparent z-10 pointer-events-none"
+      ></div>
+      <p
+        class="text-center font-mono text-xs text-white/20 uppercase tracking-widest mb-6"
+      >
+        Trusted by top agencies worldwide
+      </p>
+      <div class="marquee-track">
+        @for (brand of brands; track $index) {
+          <div class="marquee-item flex items-center gap-3 mr-12 shrink-0">
+            <div
+              class="w-8 h-8 rounded-lg flex items-center justify-center"
+              [style.background]="brand.color + '20'"
+            >
+              <span [innerHTML]="brand.icon" [style.color]="brand.color"></span>
+            </div>
+            <span
+              class="font-heading text-sm font-semibold text-white/30 whitespace-nowrap"
+            >
+              {{ brand.name }}
+            </span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

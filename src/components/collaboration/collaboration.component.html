@@ -1,0 +1,86 @@
+<section
+  id="platform"
+  class="section-padding bg-dark-100 relative overflow-hidden"
+>
+  <div
+    class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/5 to-transparent"
+  ></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    
+    <!-- Header Section -->
+    <div class="flex flex-col items-center mb-16">
+      <div class="bg-primary-gradient w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+        <!-- Gears Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+      </div>
+      <!-- Heading -->
+      <h2 class="font-sans text-4xl md:text-6xl font-bold tracking-wide text-[#E6F4F1]">
+        Our Services
+      </h2>
+    </div>
+
+    <!-- Animated Accordion Cards Section -->
+    <div class="flex flex-col md:flex-row gap-4 md:gap-6 w-full max-w-5xl mx-auto h-[800px] md:h-[550px] mb-24" #rolesRef>
+      @for (role of roles; track role.title) {
+        <div class="group relative flex-1 hover:flex-[3] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] rounded-[2rem] overflow-hidden cursor-pointer bg-dark-200 border border-white/5 hover:border-white/20 shadow-2xl">
+          
+          <img 
+            [src]="role.image" 
+            [alt]="role.title"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+          />
+
+          <!-- Dark Gradient Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+          <div class="bg-primary-gradient absolute bottom-0 right-0 w-[4.5rem] h-[55%] rounded-tl-[1.5rem] flex items-center justify-center transition-all duration-500 group-hover:translate-x-full group-hover:opacity-0 origin-right z-10">
+            <span class="transform -rotate-90 whitespace-nowrap text-white font-semibold tracking-wider text-lg">
+              {{ role.title }}
+            </span>
+          </div>
+
+          <!-- HOVER STATE: Expanded Content -->
+          <div class="absolute bottom-0 left-0 w-full p-8 flex items-end justify-between opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 delay-100 z-20">
+            
+            <div class="w-[280px] md:w-[320px]">
+              <h3 class="font-display text-2xl md:text-3xl font-bold text-white mb-2">
+                {{ role.title }}
+              </h3>
+              <p class="font-body text-white/70 text-sm leading-relaxed">
+                {{ role.description }}
+              </p>
+            </div>
+            
+            <button class="bg-primary-gradient w-12 h-12 shrink-0 rounded-full flex items-center justify-center hover:opacity-90 transition-opacity shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="white" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </button>
+          </div>
+
+        </div>
+      }
+    </div>
+
+    <!-- Tech badges -->
+    <div class="text-center aos-hidden" #techRef>
+      <p class="font-mono text-xs text-white/25 uppercase tracking-widest mb-6">
+        Powered by
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        @for (tech of techBadges; track tech.name) {
+          <div
+            class="flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/8 bg-white/3 hover:border-white/20 transition-colors cursor-default"
+          >
+            <span [innerHTML]="tech.icon"></span>
+            <span class="font-mono text-xs text-white/50">{{ tech.name }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

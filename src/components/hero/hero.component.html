@@ -1,0 +1,129 @@
+<section id="hero" class="relative min-h-screen flex items-center overflow-hidden bg-dark grid-bg">
+
+      <canvas #threeCanvas id="three-canvas"></canvas>
+
+      <div class="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-dark to-transparent pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-24 pb-20 w-full">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+          <!-- Left -->
+          <div class="hero-content">
+            <div class="inline-flex items-center gap-2 mb-8 hero-animate" style="animation-delay: 0ms">
+              <div class="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span class="font-mono text-xs text-primary tracking-widest uppercase">#1 Media Marketplace</span>
+              </div>
+            </div>
+
+            <h1 class="font-display leading-none tracking-wider mb-6 hero-animate" style="animation-delay: 100ms">
+              <span class="block text-5xl md:text-7xl lg:text-8xl text-white">STRONGER</span>
+              <span class="block text-5xl md:text-7xl lg:text-8xl text-gradient-red">CAMPAIGNS</span>
+              <span class="block text-3xl md:text-4xl lg:text-5xl text-white/40 mt-2">SMARTER BUYING</span>
+            </h1>
+
+            <p class="font-body text-white/60 text-lg md:text-xl leading-relaxed mb-10 max-w-lg hero-animate" style="animation-delay: 200ms">
+              We simplify media buying with data-driven insights, AI automation,
+              and seamless collaboration — delivering measurable ROI for advertisers,
+              agencies, and media owners.
+            </p>
+
+            <div class="flex flex-wrap gap-4 hero-animate" style="animation-delay: 300ms">
+              <button class="btn-primary px-8 py-4 rounded-xl text-base font-heading tracking-wide">
+                <span>Start Your Journey →</span>
+              </button>
+              <button class="btn-outline px-8 py-4 rounded-xl text-base font-heading tracking-wide flex items-center gap-2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polygon points="10 8 16 12 10 16 10 8"/>
+                </svg>
+                <span>Watch Demo</span>
+              </button>
+            </div>
+
+            <div class="flex flex-wrap gap-6 mt-12 hero-animate" style="animation-delay: 400ms">
+              @for (stat of heroStats; track stat.label) {
+                <div class="flex flex-col">
+                  <span class="font-heading text-2xl font-bold text-white">{{ stat.value }}</span>
+                  <span class="font-body text-xs text-white/40 uppercase tracking-widest">{{ stat.label }}</span>
+                </div>
+              }
+            </div>
+          </div>
+
+          <!-- Right — floating metrics card -->
+          <div class="hidden lg:flex justify-end items-center hero-animate" style="animation-delay: 250ms">
+            <div class="relative w-full max-w-sm">
+
+              <div class="card-glass rounded-2xl p-6 relative z-10 border-gradient">
+                <div class="flex items-center justify-between mb-5">
+                  <span class="font-mono text-xs text-white/40 uppercase tracking-widest">Live Campaign</span>
+                  <span class="flex items-center gap-1.5 text-xs font-mono text-emerald-400">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Active
+                  </span>
+                </div>
+
+                @for (metric of campaignMetrics; track metric.label) {
+                  <div class="mb-4">
+                    <div class="flex justify-between items-center mb-1.5">
+                      <span class="font-body text-sm text-white/60">{{ metric.label }}</span>
+                      <span class="font-mono text-sm text-white font-medium">{{ metric.value }}</span>
+                    </div>
+                    <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
+                      <div class="h-full rounded-full progress-bar"
+                           [style.width]="metric.progress + '%'"
+                           [style.background]="metric.color"
+                           [style.animation-delay]="metric.delay">
+                      </div>
+                    </div>
+                  </div>
+                }
+
+                <div class="mt-5 pt-5 border-t border-white/5 flex items-end gap-1 h-16">
+                  @for (bar of chartBars; track $index) {
+                    <div class="flex-1 rounded-t bg-primary/20 hover:bg-primary/60 transition-colors cursor-pointer chart-bar"
+                         [style.height]="bar + '%'"
+                         [style.animation-delay]="$index * 60 + 'ms'">
+                    </div>
+                  }
+                </div>
+                <span class="font-mono text-[10px] text-white/25 uppercase tracking-widest mt-2 block">
+                  ROI Performance (30d)
+                </span>
+              </div>
+
+              <!-- <div class="absolute -bottom-8 -left-8 card-glass rounded-xl p-4 z-20 border-gradient w-48 float-anim">
+                <div class="flex items-center gap-3 mb-2">
+                  <div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8173C" stroke-width="2.5">
+                      <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="font-mono text-[10px] text-white/40 uppercase">Reach</div>
+                    <div class="font-heading text-sm font-bold text-white">1M+</div>
+                  </div>
+                </div>
+                <div class="h-0.5 bg-gradient-to-r from-primary to-transparent rounded"></div>
+              </div> -->
+
+              <!-- <div class="absolute -top-6 -right-6 card-glass rounded-xl p-4 z-20 border-gradient float-anim-2">
+                <div class="font-mono text-[10px] text-white/40 uppercase mb-1">Efficiency</div>
+                <div class="font-heading text-2xl font-bold text-gradient-red">98.99%</div>
+              </div> -->
+
+              <div class="absolute inset-0 bg-primary/5 rounded-2xl blur-3xl scale-110 -z-10"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 scroll-indicator">
+        <span class="font-mono text-[10px] text-white/30 uppercase tracking-widest">Scroll</span>
+        <div class="w-px h-12 bg-gradient-to-b from-primary/50 to-transparent"></div>
+      </div>
+
+    </section>

@@ -1,0 +1,52 @@
+nav.nav-transparent {
+  background: transparent;
+}
+nav.scrolled {
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.nav-link {
+  position: relative;
+}
+.nav-indicator {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, #e8173c, #ff6b8a);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.nav-link:hover .nav-indicator,
+.nav-link.active .nav-indicator {
+  transform: scaleX(1);
+}
+.nav-link.active {
+  color: white !important;
+}
+.hamburger-bar {
+  display: block;
+  height: 1.5px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.open-1 {
+  transform: translateY(6px) rotate(45deg);
+}
+.open-2 {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.open-3 {
+  transform: translateY(-6px) rotate(-45deg);
+}
+.mobile-menu {
+  max-height: 0;
+}
+.mobile-menu-open {
+  max-height: 400px;
+}
